@@ -1,73 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-<head align="center">
 <meta charset="utf-8">
+<head align="center">
 <title>Documentação Obra</title>
 
-<script>
-var save_user_input = prompt('Qual a obra que pretende consultar');
-//^ makes a variable of the prompt's answer
-if (save_user_input == null) {
-//^ if the answer is null, it is nothing
-//however, if it is nothing, it is cancelled (as seen below). If it is "null" it is what the user said, then assigned to the variable(i think), but also null as in nothing in the prompt answer window, but ok pressed. So you cant do an or "null" (which would look like: if (save_user_input == null || "null") {)because (I also don't really know if this is right) the variable is "null". Very confusing
-alert("A operação foi cancelada");
-//^ alerts the user the cancel button was pressed. No long explanation this time.
-}
-//^ is an end for the if (i got stumped as to why it wasn’t working and then realised this. very important to remember.)
-else {
-//alert(save_user_input + " is what you said");
-//^ alerts the user the variable and adds the string " is what you said" on the end
-}
-</script>
-
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+</style>
+
+
+
+<script>
+save_user_input;
+name;
+</script>
+
+<script>
+   function obterValor()
+   {
+      save_user_input = prompt('Qual a obra que pretende consultar');
+      //^ makes a variable of the prompt's answer
+         if (save_user_input == null) {
+            alert("A operação foi cancelada");
+                        }
+         else {
+            //alert(save_user_input + " is what you said");
+               }
+   }
+</script>
+
+<!--Neste grupo pode alterar as caracteristicas das tabelas-->
+<style>
 table {  /* table */
-   border: 1px solid black;
+   border: 0px solid #03362b;
    border-spacing: 5px;
    border-collapse: separate;
 }
 th, td {  /* cells */
-   border: 1px solid #aaa;
+   border: 1px solid #2ecc71;
+   border-style: dashed;
    padding: 5px 10px;
 }
-</style text-align:center>
+</style>
+
+<!--Neste grupo pode alterar das células individualmente-->
+<style>
+*{margin:0;padding:0;border:0;}
+table{border-spacing: 2;}
+td
+{
+    border: 2px solid #bf8221;
+    border-style: outset;
+    border-radius: 4px;
+    background-color: #e8a73f;
+}
+th
+{
+  border: 2px solid #bf8221;
+    border-style: outset;
+    border-radius: 4px;
+}
+
+
+</style>
+
 </head>
-<body align="center" style="font-family:'Calibri'">
-    <h1 id="header" align="center">Documentação da obra <span id="name" style="color: #2ecc71"></span></h1>
- <script>
+
+<body align="center" style="font-family: 'MyWebFont', Fallback, sans-serif;">
+<!--Chamada da função onde recebe o valor dado pelo utilizador-->
+<script>
+obterValor();
+</script>
+  
+<!--Daqui em diante encontra as propriedades das caixas e secções-->
+<style>
+div.moldura {
+  position: relative;
+  width: 700px;
+  height: 800px;
+  border: 3px solid #73AD21;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+} 
+
+div.box1 { 
+    background-color: #fced8b;
+    border-radius: 8px;
+    color: #fff;
+    opacity: 40;
+    height: 250px;
+    width:260px;
+    position: absolute;
+    left: 30px;
+    top: 80px;
+    }
+
+div.box2 {
+    background-color: rgba(0,244,134,.5);
+    border-radius: 8px;
+    color: #000000;
+    height: 100px;
+    width:100px;
+    position: absolute;
+    top: 80px;
+    right: 30px;
+}
+</style>
+
+<div class="moldura">
+
+
+<h1 id="header" align="center"><b>Biblioteca da obra </b><b><span id="name" style="color: #2ecc71"></span></b></h1>
+   
+    <script>
     let name = save_user_input;
     document.getElementById("name").innerHTML = name;
   </script>
-
-  <table align="center">
+  
+  <!--Aqui está a primeira tabela do documento-->
+  <div class="box1">
+  
+    <table align="center" style="color: Black;">
     <caption></caption>
     <tr>
-      <th>S/No</th>
+      <th>Nº</th>
       <th>Documento</th>
-      <th>Link</th>
+      <th>Caminho</th>
     </tr>
     <tr>
       <td>1.</td>
       <td>Diário de Obra</td>
       <td>
 <script>
-            var loc = "http://E:/Shared/Geral/Obras-HumaConstroi/"+save_user_input;
-            document.write('<a href="' + loc + '"><img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png" alt="DiárioObra"  height="32" width="32" align="center" valign="middle"/></a>');
+            //obterValor();
+            var loc = "http://2002/E:/Shared/Geral/Obras-HumaConstroi/"+save_user_input;
+            document.write('<a href="' + loc + '"><img src="https://img.icons8.com/dusk/64/000000/video-file.png" alt="DiárioObra"  height="32" width="32" align="center" valign="middle"/></a>');
         </script>
 </td>
     </tr>
     <tr>
       <td>2.</td>
       <td>Certidão</td>
-      <td><img src="../images/css3.png" alt="CSS Logo"  height="64" width="64"></td>
+      <td>
+      <script>
+            //obterValor();
+            var loc = "http://2002/E:/Shared/Geral/Obras-HumaConstroi/"+save_user_input;
+            document.write('<a href="' + loc + '"><img src="https://img.icons8.com/dusk/64/000000/pdf.png" alt="Certidao"  height="32" width="32" align="center" valign="middle"/></a>');
+        </script>
+      </td>
     </tr>
     <tr>
       <td>3.</td>
-      <td>JavaScript</td>
-      <td><img src="../images/js3.png" alt="JavaScript Logo" height="64" width="64"></td>
+      <td>Declaração</td>
+      <td>
+      <script>
+            //obterValor();
+            var loc = "http://2002/E:/Shared/Geral/Obras-HumaConstroi/"+save_user_input;
+            document.write('<a href="' + loc + '"><img src="https://img.icons8.com/dusk/64/000000/image-file.png" alt="Certidao"  height="32" width="32" align="center" valign="middle"/></a>');
+        </script>
+      </td>
     </tr>
   </table>
+  
+  </div>
+  
+  <div class="box2">This div element has position: absolute;</div>
+</div>
+    
 </body>
 </html>
